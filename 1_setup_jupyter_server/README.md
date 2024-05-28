@@ -34,12 +34,15 @@ If everything runs, you should find tips about the next step (between two lines 
 ```bash
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Do the following on your local bash terminal: 
-ssh -N -f -L localhost:8893:TraceXX:8890 USER@trace.cmu.edu"
 
-ps aux | grep ssh"
+ssh -N -f -L localhost:8893:traceXX:8890 USER@trace.cmu.edu
 
-Now, in your LOCAL browser, visit the following."
-http://127.0.0.1:8893/lab?token=d9ff4bbdfa6b10ef3d07f4a705286c735347b5d37585b150"
+ps aux | grep ssh
+
+Now, in your LOCAL browser, visit the following.
+
+http://127.0.0.1:8893/lab?token=aaaaaaaaaaaaaaaaaabbbbbbbbbccccccccdddddddddddde
+
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ```
 
