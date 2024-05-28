@@ -16,8 +16,8 @@ Click the second one and you have a Linux-like terminal at your local computer.
 
 #### 3. Upload this job file, "./sbatch_JupyterLab_Server.sh", to a location you like on TRACE. To set the server up, just submit this .sh file like
 
-'''
-sbatch sbatch_JupyterLab_Server.sh
+'''bash
+$ sbatch sbatch_JupyterLab_Server.sh
 '''
 
 TRACE will generate a log file after the job is running. Taking a look and you may find the following is done via it.
@@ -26,7 +26,7 @@ TRACE will generate a log file after the job is running. Taking a look and you m
 Once the job is running, check the generated log file on TRACE.
 If everything runs, you should find tips about the next step (between two lines of pluses). For example, like the following.
 
-'''
+'''bash
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Do the following on your local bash terminal: 
 ssh -N -f -L localhost:8893:TraceXX:8890 USER@trace.cmu.edu"
