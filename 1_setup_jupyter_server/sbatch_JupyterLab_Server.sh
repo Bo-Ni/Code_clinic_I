@@ -23,22 +23,34 @@ echo "==========================================================================
 echo
 
 # predict the local command
-echo "Do the following on your local bash terminal: "
+
+# specify the password for jupyter lab login. Feel free to change
+JupyterLabToken=aaaaaaaaaaaaaaaaaabbbbbbbbbccccccccdddddddddddde
+
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-echo "ssh -N -f -L localhost:8893:$SLURMD_NODENAME:8890 bni2@trace.cmu.edu"
+echo "Type in the following two lines in your local bash terminal one by one: "
+echo 
+echo "ssh -N -f -L localhost:8893:$SLURMD_NODENAME:8890 $USER@trace.cmu.edu"
 echo
 echo "ps aux | grep ssh"
 echo 
-echo "Now, in your LOCAL browser, visit the following."
-echo "http://127.0.0.1:8893/lab?token=d9ff4bbdfa6b10ef3d07f4a705286c735347b5d37585b150"
+echo "Now, in your LOCAL browser, visit the following address."
+echo 
+echo "http://127.0.0.1:8893/lab?token=${JupyterLabToken}"
+echo 
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo 
+echo 
 
 module load anaconda3/2023.03-1
  
 # source activate YOUR_OWN_VIR_ENV # if needed.
 
 
-jupyter lab --no-browser --ip=0.0.0.0 --port=8890 --ContentsManager.allow_hidden=True --NotebookApp.token='d9ff4bbdfa6b10ef3d07f4a705286c735347b5d37585b150'
+# jupyter lab --no-browser --ip=0.0.0.0 --port=8890 --ContentsManager.allow_hidden=True --NotebookApp.token='d9ff4bbdfa6b10ef3d07f4a705286c735347b5d37585b150'
+
+jupyter lab --no-browser --ip=0.0.0.0 --port=8890 --ContentsManager.allow_hidden=True --NotebookApp.token='${JupyterLabToken}'
+
 # ssh -N -f -L localhost:8893:trace17:8890 bni2@trace.cmu.edu
 # address:
 # http://127.0.0.1:8893/lab?token=d9ff4bbdfa6b10ef3d07f4a705286c735347b5d37585b150
